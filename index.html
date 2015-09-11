@@ -1,69 +1,80 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Pocketkid2.github.com : My Github Page" />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Pocketkid2.github.com</title>
+    <meta charset="UTF-8">
+    <title>Pocketkid2.github.com by Pocketkid2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">Pocketkid2.github.com</h1>
+      <h2 class="project-tagline">My Github Page</h2>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/Pocketkid2">View on GitHub</a>
+    <section class="main-content">
+      <h1>
+<a id="welcome-to-adams-tutorial-website" class="anchor" href="#welcome-to-adams-tutorial-website" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to Adam's Tutorial Website</h1>
 
-          <h1 id="project_title">Pocketkid2.github.com</h1>
-          <h2 id="project_tagline">My Github Page</h2>
+<p>I love programming. I do it a lot. I have discovered many cool tricks and tips and other useful things. I like sharing those with people. Here you will find those, as well as code snippets and step by steps that you may use for whatever you want!</p>
 
-        </header>
-    </div>
+<h2>
+<a id="adams-guide-to-publishing-a-local-project-to-github-with-the-basic-files-without-trouble" class="anchor" href="#adams-guide-to-publishing-a-local-project-to-github-with-the-basic-files-without-trouble" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adam's guide to publishing a local project to GitHub with the basic files without trouble!</h2>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
+<h4>
+<a id="why-i-am-explaining-this" class="anchor" href="#why-i-am-explaining-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why I am explaining this</h4>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>I have had the problems before where I want to push a local repo to github, but all the extra files are tracked. I have to add a gitignore and then manually untrack them. That's not fun. If you do it the other way, where you make the repo on GitHub and then you add those files, you can't clone that repo into your existing project directory. So what do you do? It turns out there are some quick steps that I've found that let me fix all those problems in the least amount of time.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<h4>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h4>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<ul>
+<li>GitHub app (recommended)</li>
+<li>Git and a terminal (On windows I use Git Bash, which comes with Git for windows)</li>
+<li>An existing project folder (with code and all that jazz, I use my eclipse maven projects for this)</li>
+<li>A GitHub account (duh)</li>
+<li>A good text editor is recommended unless you know vi like a pro</li>
+</ul>
 
-<h3>Designer Templates</h3>
+<h3>
+<a id="steps" class="anchor" href="#steps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Steps</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<ol>
+<li>Open up git bash or terminal and <code>cd</code> into the directory of your project (for me it's something like <code>~/workspace/NAME</code>)</li>
+<li>Type <code>git init</code>
+</li>
+<li>Type <code>vi .gitignore</code>
+</li>
+<li>If you know vi, you can start putting in your gitignore. If you don't like vi like me, just type <code>:wq</code> and hit enter.</li>
+<li>Now open your text editor and navigate to your project folder and open the .gitignore</li>
+<li>Put in your .gitignore. There are some standard github gitignores if you search around, but for Java and Maven and Eclipse at the same time, I have combined some into a standardized gist <a href="https://gist.github.com/Pocketkid2/18180a8bab52735716b3">here</a>
+</li>
+<li>Save the file, exit, and bring back up the Git Bash/terminal.</li>
+<li>Type <code>git add .</code>
+</li>
+<li>Now you can commit your files. I prefer using the github gui app to do the rest, but if you know git command line well you can do it either way. So if you decided to use github app, open it up.</li>
+<li>Find the plus button in the top left corner and make sure the Add tab is selected.</li>
+<li>Click the browse button and navigate to and select your project folder, then click Add Repository</li>
+<li>Make sure the uncommitted changes tab is up, and commit your changes using the GUI</li>
+<li>Click publish in the top right corner, and give your repo a description</li>
+<li>Your repo should now be on github! Find it on your profile page.</li>
+<li>It should say at the bottom asking you to create a readme, go ahead and do it.</li>
+<li>When you finished that, you can click the plus button next to the directory name to add a license.</li>
+<li>If you want a license, start typing LICENSE in the box and on the right it should say Do you want a template? And you can choose one of those options. I often use the MIT license.</li>
+<li>When you're done with that, you're done! I hope this tutorial helped you!</li>
+</ol>
 
-<h3>Rather Drive Stick?</h3>
+      <footer class="site-footer">
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-    
+    </section>
 
+  
   </body>
 </html>
