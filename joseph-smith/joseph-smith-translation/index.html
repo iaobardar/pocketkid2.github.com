@@ -2,60 +2,1908 @@
 <html>
     <head>
         <title>JST vs KJV</title>
+        <style>            
+            input[type='checkbox'] { display: none; }
+            
+            .lbl-toggle {
+                display: block;
+
+                font-weight: bold;
+                font-family: monospace;
+                font-size: 1.2rem;
+                #text-transform: uppercase;
+                text-align: center;
+
+                padding: 0.3rem;
+
+                color: #000000;
+                background: #FFFFFF;
+
+                cursor: pointer;
+
+                border-radius: 0px;
+                transition: all 0.25s ease-out;
+            }
+
+            .lbl-toggle:hover { color: #888888; }
+            
+            .lbl-toggle::before {
+                content: ' ';
+                display: inline-block;
+
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-left: 5px solid currentColor;
+
+                vertical-align: middle;
+                margin-right: .7rem;
+                transform: translateY(-2px);
+
+                transition: transform .2s ease-out;
+            }
+            
+            .collapsible-content .content-inner {
+                background: #FFFFFF;
+                border-bottom: 1px solid #FFFFFF;
+
+                border-bottom-left-radius: 0px;
+                border-bottom-right-radius: 0px;
+                padding: .5rem 1rem;
+            }
+            
+            .collapsible-content {
+                max-height: 0px;
+                overflow: hidden;
+
+                transition: max-height .25s ease-in-out;
+            }
+            
+            .toggle:checked + .lbl-toggle + .collapsible-content {
+                max-height: 100vh;
+            }
+            
+            .toggle:checked + .lbl-toggle::before {
+                transform: rotate(90deg) translateX(-3px);
+            }
+
+            .toggle:checked + .lbl-toggle {
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+            
+            div.header {
+                align: center;
+                width: 90%;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            div.intro {
+                align: center;
+                width: 75%;
+                text-align: justify;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            
+            .chap_link {
+                padding: 10px
+            }
+        </style>
     </head>
-    <body>
-        <div align=center>
+    <body style="font-family: georgia">
+        <div class="header">
             <h1>Joseph Smith Translation vs King James Version</h1>
-            <h4>A compilation and analysis of all the Joseph Smith Translation changes, both in the manuscripts and the printed editions</h4>
+            <h4>A side-by-side comparison of the King James Bible with various manuscript and pritned editions of the "New Translation" or "Inspired Version", also known as the Joseph Smith Translation (JST)</h4>
         </div>
+        <div class="intro">
+            <p>1. Chapters with no link contain no changes, and are either marked as correct in the manuscript or are not listed in said manuscript.</p>
+            <p>2. Chapters with regular links contain changes in the manuscript, but are not written out in full, requiring the marked Bible.</p>
+            <p>3. Chapters with bold links contain the entire text of the chapter written out, thus not requiring the marked Bible to determine insertion and change points.</p>
+            <p>4. Chapters with bold and italic links contain text published in the Pearl of Great Price. (Moses and Joseph Smith-Matthew)</p>
+            <p>Credits: All manuscript transcripts and historical details are taken from josephsmithpapers.org. The Moses references corresponding to Genesis are taken from <i>"The Complete Joseph Smith Translation of the Old Testament"</i> by Thomas A. Wayment (Deseret Book, 2009).</p>
+        </div>
+        <br>
+        <br>
         <div align=center>
-            <p>Verses with no changes are shown in each chapter for easier reading.</p>
-            <p>Stage 1 compares 2013 LDS King James Bible with it's own JST Footnotes, and where applicable, the 2013 Pearl of Great Price excerpts</p>
-            <p>Future stages may include the following: Manuscripts as published and transcribed by JosephSmithPapers.org, RLDS printed editions (primarily the original 1867 and 1944 update), and a transcript of the original 1828 marked Bible owned by Joseph Smith.</p>
-        </div>
-        <div>
-            <h2>Old Testament</h2>
-            <ul>
-                <li>Genesis</li>
-                    <ul>
-                        <li><a href="genesis-1.html">Chapter 1 vs Moses 2</a></li>
-                        <li><a href="genesis-2.html">Chapter 2 vs Moses 3</a></li>
-                        <li><a href="genesis-3.html">Chapter 3 vs Moses 4</a></li>
-                    </ul>
-                <li>Exodus</li>
-                <li>Deuteronomy</li>
-                <li>1 Samuel</li>
-                <li>2 Samuel</li>
-                <li>1 Chronicles</li>
-                <li>2 Chronicles</li>
-                <li>Psalms</li>
-                <li>Isaiah</li>
-                <li>Jeremiah</li>
-                <li>Amos</li>
+            <h1 style="font-family:monospace">Old Testament</h1>
+            
+            <ul style="list-style-type: none">
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible1" class="toggle" type="checkbox">
+                    <label for="collapsible1" class="lbl-toggle">Genesis (6/24/36/50)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href=""><b><i>Chapter 1 (Moses 1-2)</i></b></a>
+                            <a class="chap_link" href=""><b><i>Chapter 2 (Moses 3)</i></b></a>
+                            <a class="chap_link" href=""><b><i>Chapter 3 (Moses 4)</i></b></a>
+                            <a class="chap_link" href=""><b><i>Chapter 4 (Moses 5-6:4)</i></b></a>
+                            <a class="chap_link" href=""><b><i>Chapter 5 (Moses 6:5-8:12)</i></b></a>
+                            <a class="chap_link" href=""><b><i>Chapter 6 (Moses 8:13-30)</i></b></a>
+                            <a class="chap_link" href=""><b>Chapter 7</b></a>
+                            <a class="chap_link" href=""><b>Chapter 8</b></a>
+                            <a class="chap_link" href=""><b>Chapter 9</b></a>
+                            <a class="chap_link" href=""><b>Chapter 10</b></a>
+                            <a class="chap_link" href=""><b>Chapter 11</b></a>
+                            <a class="chap_link" href=""><b>Chapter 12</b></a>
+                            <a class="chap_link" href=""><b>Chapter 13</b></a>
+                            <a class="chap_link" href=""><b>Chapter 14</b></a>
+                            <a class="chap_link" href=""><b>Chapter 15</b></a>
+                            <a class="chap_link" href=""><b>Chapter 16</b></a>
+                            <a class="chap_link" href=""><b>Chapter 17</b></a>
+                            <a class="chap_link" href=""><b>Chapter 18</b></a>
+                            <a class="chap_link" href=""><b>Chapter 19</b></a>
+                            <a class="chap_link" href=""><b>Chapter 20</b></a>
+                            <a class="chap_link" href=""><b>Chapter 21</b></a>
+                            <a class="chap_link" href=""><b>Chapter 22</b></a>
+                            <a class="chap_link" href=""><b>Chapter 23</b></a>
+                            <a class="chap_link" href=""><b>Chapter 24</b></a>
+                            <a class="chap_link" href="">Chapter 25</a>
+                            <a class="chap_link" href="">Chapter 26</a>
+                            <span class="chap_link">Chapter 27</span>
+                            <a class="chap_link" href="">Chapter 28</a>
+                            <a class="chap_link" href="">Chapter 29</a>
+                            <a class="chap_link" href="">Chapter 30</a>
+                            <span class="chap_link">Chapter 31</span>
+                            <a class="chap_link" href="">Chapter 32</a>
+                            <span class="chap_link">Chapter 33</span>
+                            <span class="chap_link">Chapter 34</span>
+                            <span class="chap_link">Chapter 35</span>
+                            <span class="chap_link">Chapter 36</span>
+                            <a class="chap_link" href="">Chapter 37</a>
+                            <a class="chap_link" href="">Chapter 38</a>
+                            <a class="chap_link" href="">Chapter 39</a>
+                            <span class="chap_link">Chapter 40</span>
+                            <span class="chap_link">Chapter 41</span>
+                            <span class="chap_link">Chapter 42</span>
+                            <span class="chap_link">Chapter 43</span>
+                            <a class="chap_link" href="">Chapter 44</a>
+                            <span class="chap_link">Chapter 45</span>
+                            <span class="chap_link">Chapter 46</span>
+                            <span class="chap_link">Chapter 47</span>
+                            <a class="chap_link" href="">Chapter 48</a>
+                            <a class="chap_link" href="">Chapter 49</a>
+                            <span class="chap_link">Chapter 50</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible2" class="toggle" type="checkbox">
+                    <label for="collapsible2" class="lbl-toggle">Exodus (21/40)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <span class="chap_link">Chapter 2</span>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <a class="chap_link" href="">Chapter 4</a>
+                            <a class="chap_link" href="">Chapter 5</a>
+                            <a class="chap_link" href="">Chapter 6</a>
+                            <a class="chap_link" href="">Chapter 7</a>
+                            <span class="chap_link">Chapter 8</span>
+                            <a class="chap_link" href="">Chapter 9</a>
+                            <a class="chap_link" href="">Chapter 10</a>
+                            <a class="chap_link" href="">Chapter 11</a>
+                            <a class="chap_link" href="">Chapter 12</a>
+                            <span class="chap_link">Chapter 13</span>
+                            <a class="chap_link" href="">Chapter 14</a>
+                            <span class="chap_link">Chapter 15</span>
+                            <span class="chap_link">Chapter 16</span>
+                            <span class="chap_link">Chapter 17</span>
+                            <a class="chap_link" href="">Chapter 18</a>
+                            <span class="chap_link">Chapter 19</span>
+                            <a class="chap_link" href="">Chapter 20</a>
+                            <a class="chap_link" href="">Chapter 21</a>
+                            <a class="chap_link" href="">Chapter 22</a>
+                            <a class="chap_link" href="">Chapter 23</a>
+                            <span class="chap_link">Chapter 24</span>
+                            <span class="chap_link">Chapter 25</span>
+                            <span class="chap_link">Chapter 26</span>
+                            <a class="chap_link" href="">Chapter 27</a>
+                            <span class="chap_link">Chapter 28</span>
+                            <span class="chap_link">Chapter 29</span>
+                            <span class="chap_link">Chapter 30</span>
+                            <span class="chap_link">Chapter 31</span>
+                            <a class="chap_link" href="">Chapter 32</a>
+                            <a class="chap_link" href="">Chapter 33</a>
+                            <a class="chap_link" href="">Chapter 34</a>
+                            <span class="chap_link">Chapter 35</span>
+                            <span class="chap_link">Chapter 36</span>
+                            <span class="chap_link">Chapter 37</span>
+                            <span class="chap_link">Chapter 38</span>
+                            <span class="chap_link">Chapter 39</span>
+                            <a class="chap_link" href="">Chapter 40</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible3" class="toggle" type="checkbox">
+                    <label for="collapsible3" class="lbl-toggle">Leviticus (3/27)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                            <span class="chap_link">Chapter 11</span>
+                            <a class="chap_link" href="">Chapter 12</a>
+                            <span class="chap_link">Chapter 13</span>
+                            <span class="chap_link">Chapter 14</span>
+                            <span class="chap_link">Chapter 15</span>
+                            <span class="chap_link">Chapter 16</span>
+                            <span class="chap_link">Chapter 17</span>
+                            <span class="chap_link">Chapter 18</span>
+                            <span class="chap_link">Chapter 19</span>
+                            <span class="chap_link">Chapter 20</span>
+                            <a class="chap_link" href="">Chapter 21</a>
+                            <a class="chap_link" href="">Chapter 22</a>
+                            <span class="chap_link">Chapter 23</span>
+                            <span class="chap_link">Chapter 24</span>
+                            <span class="chap_link">Chapter 25</span>
+                            <span class="chap_link">Chapter 26</span>
+                            <span class="chap_link">Chapter 27</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible4" class="toggle" type="checkbox">
+                    <label for="collapsible4" class="lbl-toggle">Numbers (2/36)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                            <span class="chap_link">Chapter 11</span>
+                            <span class="chap_link">Chapter 12</span>
+                            <span class="chap_link">Chapter 13</span>
+                            <span class="chap_link">Chapter 14</span>
+                            <span class="chap_link">Chapter 15</span>
+                            <a class="chap_link" href="">Chapter 16</a>
+                            <span class="chap_link">Chapter 17</span>
+                            <span class="chap_link">Chapter 18</span>
+                            <span class="chap_link">Chapter 19</span>
+                            <span class="chap_link">Chapter 20</span>
+                            <span class="chap_link">Chapter 21</span>
+                            <a class="chap_link" href="">Chapter 22</a>
+                            <span class="chap_link">Chapter 23</span>
+                            <span class="chap_link">Chapter 24</span>
+                            <span class="chap_link">Chapter 25</span>
+                            <span class="chap_link">Chapter 26</span>
+                            <span class="chap_link">Chapter 27</span>
+                            <span class="chap_link">Chapter 28</span>
+                            <span class="chap_link">Chapter 29</span>
+                            <span class="chap_link">Chapter 30</span>
+                            <span class="chap_link">Chapter 31</span>
+                            <span class="chap_link">Chapter 32</span>
+                            <span class="chap_link">Chapter 33</span>
+                            <span class="chap_link">Chapter 34</span>
+                            <span class="chap_link">Chapter 35</span>
+                            <span class="chap_link">Chapter 36</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible5" class="toggle" type="checkbox">
+                    <label for="collapsible5" class="lbl-toggle">Deuteronomy (4/34)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <a class="chap_link" href="">Chapter 10</a>
+                            <span class="chap_link">Chapter 11</span>
+                            <span class="chap_link">Chapter 12</span>
+                            <span class="chap_link">Chapter 13</span>
+                            <a class="chap_link" href="">Chapter 14</a>
+                            <span class="chap_link">Chapter 15</span>
+                            <span class="chap_link">Chapter 16</span>
+                            <span class="chap_link">Chapter 17</span>
+                            <span class="chap_link">Chapter 18</span>
+                            <span class="chap_link">Chapter 19</span>
+                            <span class="chap_link">Chapter 20</span>
+                            <span class="chap_link">Chapter 21</span>
+                            <span class="chap_link">Chapter 22</span>
+                            <span class="chap_link">Chapter 23</span>
+                            <span class="chap_link">Chapter 24</span>
+                            <span class="chap_link">Chapter 25</span>
+                            <span class="chap_link">Chapter 26</span>
+                            <span class="chap_link">Chapter 27</span>
+                            <span class="chap_link">Chapter 28</span>
+                            <span class="chap_link">Chapter 29</span>
+                            <span class="chap_link">Chapter 30</span>
+                            <span class="chap_link">Chapter 31</span>
+                            <span class="chap_link">Chapter 32</span>
+                            <span class="chap_link">Chapter 33</span>
+                            <a class="chap_link" href="">Chapter 34</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible6" class="toggle" type="checkbox">
+                    <label for="collapsible6" class="lbl-toggle">Joshua (1/24)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                            <a class="chap_link" href="">Chapter 11</a>
+                            <span class="chap_link">Chapter 12</span>
+                            <span class="chap_link">Chapter 13</span>
+                            <span class="chap_link">Chapter 14</span>
+                            <span class="chap_link">Chapter 15</span>
+                            <span class="chap_link">Chapter 16</span>
+                            <span class="chap_link">Chapter 17</span>
+                            <span class="chap_link">Chapter 18</span>
+                            <span class="chap_link">Chapter 19</span>
+                            <span class="chap_link">Chapter 20</span>
+                            <span class="chap_link">Chapter 21</span>
+                            <span class="chap_link">Chapter 22</span>
+                            <span class="chap_link">Chapter 23</span>
+                            <span class="chap_link">Chapter 24</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible7" class="toggle" type="checkbox">
+                    <label for="collapsible7" class="lbl-toggle">Judges (1/21)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                            <span class="chap_link">Chapter 11</span>
+                            <span class="chap_link">Chapter 12</span>
+                            <span class="chap_link">Chapter 13</span>
+                            <span class="chap_link">Chapter 14</span>
+                            <span class="chap_link">Chapter 15</span>
+                            <span class="chap_link">Chapter 16</span>
+                            <span class="chap_link">Chapter 17</span>
+                            <span class="chap_link">Chapter 18</span>
+                            <span class="chap_link">Chapter 19</span>
+                            <span class="chap_link">Chapter 20</span>
+                            <span class="chap_link">Chapter 21</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible8" class="toggle" type="checkbox">
+                    <label for="collapsible8" class="lbl-toggle">Ruth (0/4)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 1</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible9" class="toggle" type="checkbox">
+                    <label for="collapsible9" class="lbl-toggle">1 Samuel (5/31)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                            <span class="chap_link">Chapter 11</span>
+                            <span class="chap_link">Chapter 12</span>
+                            <span class="chap_link">Chapter 13</span>
+                            <span class="chap_link">Chapter 14</span>
+                            <a class="chap_link" href="">Chapter 15</a>
+                            <a class="chap_link" href="">Chapter 16</a>
+                            <span class="chap_link">Chapter 17</span>
+                            <a class="chap_link" href="">Chapter 18</a>
+                            <a class="chap_link" href="">Chapter 19</a>
+                            <span class="chap_link">Chapter 20</span>
+                            <span class="chap_link">Chapter 21</span>
+                            <span class="chap_link">Chapter 22</span>
+                            <span class="chap_link">Chapter 23</span>
+                            <span class="chap_link">Chapter 24</span>
+                            <span class="chap_link">Chapter 25</span>
+                            <span class="chap_link">Chapter 26</span>
+                            <span class="chap_link">Chapter 27</span>
+                            <a class="chap_link" href="">Chapter 28</a>
+                            <span class="chap_link">Chapter 29</span>
+                            <span class="chap_link">Chapter 30</span>
+                            <span class="chap_link">Chapter 31</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible10" class="toggle" type="checkbox">
+                    <label for="collapsible10" class="lbl-toggle">2 Samuel (2/24)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                            <span class="chap_link">Chapter 11</span>
+                            <a class="chap_link" href="">Chapter 12</a>
+                            <span class="chap_link">Chapter 13</span>
+                            <span class="chap_link">Chapter 14</span>
+                            <span class="chap_link">Chapter 15</span>
+                            <span class="chap_link">Chapter 16</span>
+                            <span class="chap_link">Chapter 17</span>
+                            <span class="chap_link">Chapter 18</span>
+                            <span class="chap_link">Chapter 19</span>
+                            <span class="chap_link">Chapter 20</span>
+                            <span class="chap_link">Chapter 21</span>
+                            <span class="chap_link">Chapter 22</span>
+                            <span class="chap_link">Chapter 23</span>
+                            <a class="chap_link" href="">Chapter 24</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible11" class="toggle" type="checkbox">
+                    <label for="collapsible11" class="lbl-toggle">1 Kings (6/22)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                            <a class="chap_link" href="">Chapter 11</a>
+                            <span class="chap_link">Chapter 12</span>
+                            <a class="chap_link" href="">Chapter 13</a>
+                            <a class="chap_link" href="">Chapter 14</a>
+                            <a class="chap_link" href="">Chapter 15</a>
+                            <span class="chap_link">Chapter 16</span>
+                            <span class="chap_link">Chapter 17</span>
+                            <a class="chap_link" href="">Chapter 18</a>
+                            <span class="chap_link">Chapter 19</span>
+                            <span class="chap_link">Chapter 20</span>
+                            <span class="chap_link">Chapter 21</span>
+                            <span class="chap_link">Chapter 22</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible12" class="toggle" type="checkbox">
+                    <label for="collapsible12" class="lbl-toggle">2 Kings (2/25)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <a class="chap_link" href="">Chapter 8</a>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                            <span class="chap_link">Chapter 11</span>
+                            <span class="chap_link">Chapter 12</span>
+                            <span class="chap_link">Chapter 13</span>
+                            <span class="chap_link">Chapter 14</span>
+                            <span class="chap_link">Chapter 15</span>
+                            <span class="chap_link">Chapter 16</span>
+                            <span class="chap_link">Chapter 17</span>
+                            <span class="chap_link">Chapter 18</span>
+                            <span class="chap_link">Chapter 19</span>
+                            <span class="chap_link">Chapter 20</span>
+                            <span class="chap_link">Chapter 21</span>
+                            <span class="chap_link">Chapter 22</span>
+                            <span class="chap_link">Chapter 23</span>
+                            <span class="chap_link">Chapter 24</span>
+                            <span class="chap_link">Chapter 25</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible13" class="toggle" type="checkbox">
+                    <label for="collapsible13" class="lbl-toggle">1 Chronicles (2/29)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <a class="chap_link" href="">Chapter 10</a>
+                            <span class="chap_link">Chapter 11</span>
+                            <span class="chap_link">Chapter 12</span>
+                            <span class="chap_link">Chapter 13</span>
+                            <span class="chap_link">Chapter 14</span>
+                            <span class="chap_link">Chapter 15</span>
+                            <span class="chap_link">Chapter 16</span>
+                            <span class="chap_link">Chapter 17</span>
+                            <span class="chap_link">Chapter 18</span>
+                            <span class="chap_link">Chapter 19</span>
+                            <span class="chap_link">Chapter 20</span>
+                            <a class="chap_link" href="">Chapter 21</a>
+                            <span class="chap_link">Chapter 22</span>
+                            <span class="chap_link">Chapter 23</span>
+                            <span class="chap_link">Chapter 24</span>
+                            <span class="chap_link">Chapter 25</span>
+                            <span class="chap_link">Chapter 26</span>
+                            <span class="chap_link">Chapter 27</span>
+                            <span class="chap_link">Chapter 28</span>
+                            <span class="chap_link">Chapter 29</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible14" class="toggle" type="checkbox">
+                    <label for="collapsible14" class="lbl-toggle">2 Chronicles (7/36)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                            <span class="chap_link">Chapter 11</span>
+                            <span class="chap_link">Chapter 12</span>
+                            <span class="chap_link">Chapter 13</span>
+                            <span class="chap_link">Chapter 14</span>
+                            <span class="chap_link">Chapter 15</span>
+                            <span class="chap_link">Chapter 16</span>
+                            <span class="chap_link">Chapter 17</span>
+                            <a class="chap_link" href="">Chapter 18</a>
+                            <span class="chap_link">Chapter 19</span>
+                            <a class="chap_link" href="">Chapter 20</a>
+                            <span class="chap_link">Chapter 21</span>
+                            <a class="chap_link" href="">Chapter 22</a>
+                            <span class="chap_link">Chapter 23</span>
+                            <a class="chap_link" href="">Chapter 24</a>
+                            <a class="chap_link" href="">Chapter 25</a>
+                            <span class="chap_link">Chapter 26</span>
+                            <span class="chap_link">Chapter 27</span>
+                            <span class="chap_link">Chapter 28</span>
+                            <span class="chap_link">Chapter 29</span>
+                            <span class="chap_link">Chapter 30</span>
+                            <span class="chap_link">Chapter 31</span>
+                            <span class="chap_link">Chapter 32</span>
+                            <span class="chap_link">Chapter 33</span>
+                            <a class="chap_link" href="">Chapter 34</a>
+                            <span class="chap_link">Chapter 35</span>
+                            <span class="chap_link">Chapter 36</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible15" class="toggle" type="checkbox">
+                    <label for="collapsible15" class="lbl-toggle">Ezra (0/10)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible16" class="toggle" type="checkbox">
+                    <label for="collapsible16" class="lbl-toggle">Nehemiah (3/13)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <a class="chap_link" href="">Chapter 6</a>
+                            <a class="chap_link" href="">Chapter 7</a>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <a class="chap_link" href="">Chapter 10</a>
+                            <span class="chap_link">Chapter 11</span>
+                            <span class="chap_link">Chapter 12</span>
+                            <span class="chap_link">Chapter 13</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible17" class="toggle" type="checkbox">
+                    <label for="collapsible17" class="lbl-toggle">Esther (0/10)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible18" class="toggle" type="checkbox">
+                    <label for="collapsible18" class="lbl-toggle">Job (2/42)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                            <span class="chap_link">Chapter 11</span>
+                            <span class="chap_link">Chapter 12</span>
+                            <span class="chap_link">Chapter 13</span>
+                            <span class="chap_link">Chapter 14</span>
+                            <span class="chap_link">Chapter 15</span>
+                            <span class="chap_link">Chapter 16</span>
+                            <span class="chap_link">Chapter 17</span>
+                            <span class="chap_link">Chapter 18</span>
+                            <span class="chap_link">Chapter 19</span>
+                            <span class="chap_link">Chapter 20</span>
+                            <span class="chap_link">Chapter 21</span>
+                            <span class="chap_link">Chapter 22</span>
+                            <span class="chap_link">Chapter 23</span>
+                            <span class="chap_link">Chapter 24</span>
+                            <span class="chap_link">Chapter 25</span>
+                            <span class="chap_link">Chapter 26</span>
+                            <span class="chap_link">Chapter 27</span>
+                            <span class="chap_link">Chapter 28</span>
+                            <span class="chap_link">Chapter 29</span>
+                            <span class="chap_link">Chapter 30</span>
+                            <span class="chap_link">Chapter 31</span>
+                            <span class="chap_link">Chapter 32</span>
+                            <span class="chap_link">Chapter 33</span>
+                            <span class="chap_link">Chapter 34</span>
+                            <span class="chap_link">Chapter 35</span>
+                            <span class="chap_link">Chapter 36</span>
+                            <span class="chap_link">Chapter 37</span>
+                            <span class="chap_link">Chapter 38</span>
+                            <span class="chap_link">Chapter 39</span>
+                            <span class="chap_link">Chapter 40</span>
+                            <span class="chap_link">Chapter 41</span>
+                            <span class="chap_link">Chapter 42</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible19" class="toggle" type="checkbox">
+                    <label for="collapsible19" class="lbl-toggle">Psalms (50/150)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <a class="chap_link" href="">Chapter 10</a>
+                            <a class="chap_link" href="">Chapter 11</a>
+                            <a class="chap_link" href="">Chapter 12</a>
+                            <a class="chap_link" href="">Chapter 13</a>
+                            <a class="chap_link" href="">Chapter 14</a>
+                            <a class="chap_link" href="">Chapter 15</a>
+                            <a class="chap_link" href="">Chapter 16</a>
+                            <a class="chap_link" href="">Chapter 17</a>
+                            <a class="chap_link" href="">Chapter 18</a>
+                            <a class="chap_link" href="">Chapter 19</a>
+                            <span class="chap_link">Chapter 20</span>
+                            <span class="chap_link">Chapter 21</span>
+                            <a class="chap_link" href="">Chapter 22</a>
+                            <span class="chap_link">Chapter 23</span>
+                            <a class="chap_link" href="">Chapter 24</a>
+                            <span class="chap_link">Chapter 25</span>
+                            <span class="chap_link">Chapter 26</span>
+                            <a class="chap_link" href="">Chapter 27</a>
+                            <span class="chap_link">Chapter 28</span>
+                            <span class="chap_link">Chapter 29</span>
+                            <a class="chap_link" href="">Chapter 30</a>
+                            <span class="chap_link">Chapter 31</span>
+                            <a class="chap_link" href="">Chapter 32</a>
+                            <a class="chap_link" href="">Chapter 33</a>
+                            <span class="chap_link">Chapter 34</span>
+                            <a class="chap_link" href="">Chapter 35</a>
+                            <a class="chap_link" href="">Chapter 36</a>
+                            <a class="chap_link" href="">Chapter 37</a>
+                            <a class="chap_link" href="">Chapter 38</a>
+                            <a class="chap_link" href="">Chapter 39</a>
+                            <span class="chap_link">Chapter 40</span>
+                            <a class="chap_link" href="">Chapter 41</a>
+                            <a class="chap_link" href="">Chapter 42</a>
+                            <span class="chap_link">Chapter 43</span>
+                            <span class="chap_link">Chapter 44</span>
+                            <span class="chap_link">Chapter 45</span>
+                            <a class="chap_link" href="">Chapter 46</a>
+                            <span class="chap_link">Chapter 47</span>
+                            <span class="chap_link">Chapter 48</span>
+                            <a class="chap_link" href="">Chapter 49</a>
+                            <a class="chap_link" href="">Chapter 50</a>
+                            <span class="chap_link">Chapter 1</span>
+                            <a class="chap_link" href="">Chapter 52</a>
+                            <a class="chap_link" href="">Chapter 53</a>
+                            <span class="chap_link">Chapter 4</span>
+                            <a class="chap_link" href="">Chapter 55</a>
+                            <a class="chap_link" href="">Chapter 56</a>
+                            <span class="chap_link">Chapter 57</span>
+                            <span class="chap_link">Chapter 58</span>
+                            <span class="chap_link">Chapter 59</span>
+                            <span class="chap_link">Chapter 60</span>
+                            <span class="chap_link">Chapter 61</span>
+                            <span class="chap_link">Chapter 62</span>
+                            <span class="chap_link">Chapter 63</span>
+                            <span class="chap_link">Chapter 64</span>
+                            <span class="chap_link">Chapter 65</span>
+                            <span class="chap_link">Chapter 66</span>
+                            <span class="chap_link">Chapter 67</span>
+                            <span class="chap_link">Chapter 68</span>
+                            <span class="chap_link">Chapter 69</span>
+                            <span class="chap_link">Chapter 70</span>
+                            <span class="chap_link">Chapter 71</span>
+                            <span class="chap_link">Chapter 72</span>
+                            <span class="chap_link">Chapter 73</span>
+                            <span class="chap_link">Chapter 74</span>
+                            <span class="chap_link">Chapter 75</span>
+                            <span class="chap_link">Chapter 76</span>
+                            <span class="chap_link">Chapter 77</span>
+                            <span class="chap_link">Chapter 78</span>
+                            <span class="chap_link">Chapter 79</span>
+                            <span class="chap_link">Chapter 80</span>
+                            <span class="chap_link">Chapter 81</span>
+                            <a class="chap_link" href="">Chapter 82</a>
+                            <span class="chap_link">Chapter 83</span>
+                            <span class="chap_link">Chapter 84</span>
+                            <span class="chap_link">Chapter 85</span>
+                            <span class="chap_link">Chapter 86</span>
+                            <span class="chap_link">Chapter 87</span>
+                            <span class="chap_link">Chapter 88</span>
+                            <span class="chap_link">Chapter 89</span>
+                            <a class="chap_link" href="">Chapter 90</a>
+                            <span class="chap_link">Chapter 91</span>
+                            <span class="chap_link">Chapter 92</span>
+                            <span class="chap_link">Chapter 93</span>
+                            <span class="chap_link">Chapter 94</span>
+                            <span class="chap_link">Chapter 95</span>
+                            <span class="chap_link">Chapter 96</span>
+                            <span class="chap_link">Chapter 97</span>
+                            <span class="chap_link">Chapter 98</span>
+                            <span class="chap_link">Chapter 99</span>
+                            <span class="chap_link">Chapter 100</span>
+                            <span class="chap_link">Chapter 101</span>
+                            <a class="chap_link" href="">Chapter 102</a>
+                            <span class="chap_link">Chapter 103</span>
+                            <a class="chap_link" href="">Chapter 104</a>
+                            <a class="chap_link" href="">Chapter 105</a>
+                            <a class="chap_link" href="">Chapter 106</a>
+                            <span class="chap_link">Chapter 107</span>
+                            <span class="chap_link">Chapter 108</span>
+                            <a class="chap_link" href="">Chapter 109</a>
+                            <a class="chap_link" href="">Chapter 110</a>
+                            <span class="chap_link">Chapter 111</span>
+                            <a class="chap_link" href="">Chapter 112</a>
+                            <span class="chap_link">Chapter 113</span>
+                            <span class="chap_link">Chapter 114</span>
+                            <a class="chap_link" href="">Chapter 115</a>
+                            <span class="chap_link">Chapter 116</span>
+                            <span class="chap_link">Chapter 117</span>
+                            <span class="chap_link">Chapter 118</span>
+                            <a class="chap_link" href="">Chapter 119</a>
+                            <span class="chap_link">Chapter 120</span>
+                            <a class="chap_link" href="">Chapter 121</a>
+                            <span class="chap_link">Chapter 122</span>
+                            <span class="chap_link">Chapter 123</span>
+                            <a class="chap_link" href="">Chapter 124</a>
+                            <a class="chap_link" href="">Chapter 125</a>
+                            <span class="chap_link">Chapter 126</span>
+                            <span class="chap_link">Chapter 127</span>
+                            <span class="chap_link">Chapter 128</span>
+                            <span class="chap_link">Chapter 129</span>
+                            <span class="chap_link">Chapter 130</span>
+                            <span class="chap_link">Chapter 131</span>
+                            <span class="chap_link">Chapter 132</span>
+                            <span class="chap_link">Chapter 133</span>
+                            <span class="chap_link">Chapter 134</span>
+                            <a class="chap_link" href="">Chapter 135</a>
+                            <span class="chap_link">Chapter 136</span>
+                            <a class="chap_link" href="">Chapter 137</a>
+                            <a class="chap_link" href="">Chapter 138</a>
+                            <a class="chap_link" href="">Chapter 139</a>
+                            <span class="chap_link">Chapter 140</span>
+                            <a class="chap_link" href="">Chapter 141</a>
+                            <span class="chap_link">Chapter 142</span>
+                            <span class="chap_link">Chapter 143</span>
+                            <span class="chap_link">Chapter 144</span>
+                            <span class="chap_link">Chapter 145</span>
+                            <a class="chap_link" href="">Chapter 146</a>
+                            <span class="chap_link">Chapter 147</span>
+                            <span class="chap_link">Chapter 148</span>
+                            <span class="chap_link">Chapter 149</span>
+                            <span class="chap_link">Chapter 150</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible20" class="toggle" type="checkbox">
+                    <label for="collapsible20" class="lbl-toggle">Proverbs (3/31)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                            <span class="chap_link">Chapter 11</span>
+                            <span class="chap_link">Chapter 12</span>
+                            <span class="chap_link">Chapter 13</span>
+                            <span class="chap_link">Chapter 14</span>
+                            <span class="chap_link">Chapter 15</span>
+                            <a class="chap_link" href="">Chapter 16</a>
+                            <span class="chap_link">Chapter 17</span>
+                            <a class="chap_link" href="">Chapter 18</a>
+                            <span class="chap_link">Chapter 19</span>
+                            <span class="chap_link">Chapter 20</span>
+                            <span class="chap_link">Chapter 21</span>
+                            <a class="chap_link" href="">Chapter 22</a>
+                            <span class="chap_link">Chapter 23</span>
+                            <span class="chap_link">Chapter 24</span>
+                            <span class="chap_link">Chapter 25</span>
+                            <span class="chap_link">Chapter 26</span>
+                            <span class="chap_link">Chapter 27</span>
+                            <span class="chap_link">Chapter 28</span>
+                            <span class="chap_link">Chapter 29</span>
+                            <span class="chap_link">Chapter 30</span>
+                            <span class="chap_link">Chapter 31</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible21" class="toggle" type="checkbox">
+                    <label for="collapsible21" class="lbl-toggle">Ecclesiastes (0/12)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                            <span class="chap_link">Chapter 11</span>
+                            <span class="chap_link">Chapter 12</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible22" class="toggle" type="checkbox">
+                    <label for="collapsible22" class="lbl-toggle">Song of Solomon (0/8)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible23" class="toggle" type="checkbox">
+                    <label for="collapsible23" class="lbl-toggle">Isaiah (38/66)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <a class="chap_link" href="">Chapter 4</a>
+                            <a class="chap_link" href="">Chapter 5</a>
+                            <a class="chap_link" href="">Chapter 6</a>
+                            <a class="chap_link" href="">Chapter 7</a>
+                            <a class="chap_link" href="">Chapter 8</a>
+                            <a class="chap_link" href="">Chapter 9</a>
+                            <a class="chap_link" href="">Chapter 10</a>
+                            <a class="chap_link" href="">Chapter 11</a>
+                            <a class="chap_link" href="">Chapter 12</a>
+                            <a class="chap_link" href="">Chapter 13</a>
+                            <a class="chap_link" href="">Chapter 14</a>
+                            <a class="chap_link" href="">Chapter 15</a>
+                            <a class="chap_link" href="">Chapter 16</a>
+                            <span class="chap_link">Chapter 17</span>
+                            <span class="chap_link">Chapter 18</span>
+                            <span class="chap_link">Chapter 19</span>
+                            <span class="chap_link">Chapter 20</span>
+                            <span class="chap_link">Chapter 21</span>
+                            <span class="chap_link">Chapter 22</span>
+                            <a class="chap_link" href="">Chapter 23</a>
+                            <span class="chap_link">Chapter 24</span>
+                            <span class="chap_link">Chapter 25</span>
+                            <a class="chap_link" href="">Chapter 26</a>
+                            <a class="chap_link" href="">Chapter 27</a>
+                            <span class="chap_link">Chapter 28</span>
+                            <a class="chap_link" href="">Chapter 29</a>
+                            <span class="chap_link">Chapter 30</span>
+                            <span class="chap_link">Chapter 31</span>
+                            <a class="chap_link" href="">Chapter 32</a>
+                            <a class="chap_link" href="">Chapter 33</a>
+                            <a class="chap_link" href="">Chapter 34</a>
+                            <a class="chap_link" href="">Chapter 35</a>
+                            <a class="chap_link" href="">Chapter 36</a>
+                            <a class="chap_link" href="">Chapter 37</a>
+                            <a class="chap_link" href="">Chapter 38</a>
+                            <span class="chap_link">Chapter 39</span>
+                            <span class="chap_link">Chapter 40</span>
+                            <span class="chap_link">Chapter 41</span>
+                            <a class="chap_link" href="">Chapter 42</a>
+                            <span class="chap_link">Chapter 43</span>
+                            <span class="chap_link">Chapter 44</span>
+                            <span class="chap_link">Chapter 45</span>
+                            <a class="chap_link" href="">Chapter 46</a>
+                            <span class="chap_link">Chapter 47</span>
+                            <span class="chap_link">Chapter 48</span>
+                            <a class="chap_link" href="">Chapter 49</a>
+                            <a class="chap_link" href="">Chapter 50</a>
+                            <a class="chap_link" href="">Chapter 51</a>
+                            <a class="chap_link" href="">Chapter 52</a>
+                            <span class="chap_link">Chapter 53</span>
+                            <a class="chap_link" href="">Chapter 54</a>
+                            <span class="chap_link">Chapter 55</span>
+                            <span class="chap_link">Chapter 56</span>
+                            <span class="chap_link">Chapter 57</span>
+                            <span class="chap_link">Chapter 58</span>
+                            <span class="chap_link">Chapter 59</span>
+                            <a class="chap_link" href="">Chapter 60</a>
+                            <span class="chap_link">Chapter 61</span>
+                            <a class="chap_link" href="">Chapter 62</a>
+                            <a class="chap_link" href="">Chapter 63</a>
+                            <a class="chap_link" href="">Chapter 64</a>
+                            <a class="chap_link" href="">Chapter 65</a>
+                            <span class="chap_link">Chapter 66</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible24" class="toggle" type="checkbox">
+                    <label for="collapsible24" class="lbl-toggle">Jeremiah (15/52)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                            <span class="chap_link">Chapter 11</span>
+                            <span class="chap_link">Chapter 12</span>
+                            <span class="chap_link">Chapter 13</span>
+                            <span class="chap_link">Chapter 14</span>
+                            <span class="chap_link">Chapter 15</span>
+                            <span class="chap_link">Chapter 16</span>
+                            <a class="chap_link" href="">Chapter 17</a>
+                            <a class="chap_link" href="">Chapter 18</a>
+                            <span class="chap_link">Chapter 19</span>
+                            <span class="chap_link">Chapter 20</span>
+                            <span class="chap_link">Chapter 21</span>
+                            <span class="chap_link">Chapter 22</span>
+                            <span class="chap_link">Chapter 23</span>
+                            <span class="chap_link">Chapter 24</span>
+                            <a class="chap_link" href="">Chapter 25</a>
+                            <a class="chap_link" href="">Chapter 26</a>
+                            <a class="chap_link" href="">Chapter 27</a>
+                            <span class="chap_link">Chapter 28</span>
+                            <a class="chap_link" href="">Chapter 29</a>
+                            <a class="chap_link" href="">Chapter 30</a>
+                            <span class="chap_link">Chapter 31</span>
+                            <span class="chap_link">Chapter 32</span>
+                            <a class="chap_link" href="">Chapter 33</a>
+                            <a class="chap_link" href="">Chapter 34</a>
+                            <a class="chap_link" href="">Chapter 35</a>
+                            <a class="chap_link" href="">Chapter 36</a>
+                            <a class="chap_link" href="">Chapter 37</a>
+                            <span class="chap_link">Chapter 38</span>
+                            <span class="chap_link">Chapter 39</span>
+                            <span class="chap_link">Chapter 40</span>
+                            <span class="chap_link">Chapter 41</span>
+                            <a class="chap_link" href="">Chapter 42</a>
+                            <span class="chap_link">Chapter 43</span>
+                            <a class="chap_link" href="">Chapter 44</a>
+                            <span class="chap_link">Chapter 45</span>
+                            <span class="chap_link">Chapter 46</span>
+                            <span class="chap_link">Chapter 47</span>
+                            <span class="chap_link">Chapter 48</span>
+                            <span class="chap_link">Chapter 49</span>
+                            <span class="chap_link">Chapter 50</span>
+                            <span class="chap_link">Chapter 51</span>
+                            <span class="chap_link">Chapter 52</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible25" class="toggle" type="checkbox">
+                    <label for="collapsible25" class="lbl-toggle">Lamentations (0/5)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible26" class="toggle" type="checkbox">
+                    <label for="collapsible26" class="lbl-toggle">Ezekiel (8/48)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                            <span class="chap_link">Chapter 11</span>
+                            <span class="chap_link">Chapter 12</span>
+                            <span class="chap_link">Chapter 13</span>
+                            <a class="chap_link" href="">Chapter 14</a>
+                            <span class="chap_link">Chapter 15</span>
+                            <span class="chap_link">Chapter 16</span>
+                            <span class="chap_link">Chapter 17</span>
+                            <a class="chap_link" href="">Chapter 18</a>
+                            <span class="chap_link">Chapter 19</span>
+                            <a class="chap_link" href="">Chapter 20</a>
+                            <span class="chap_link">Chapter 21</span>
+                            <span class="chap_link">Chapter 22</span>
+                            <a class="chap_link" href="">Chapter 23</a>
+                            <span class="chap_link">Chapter 24</span>
+                            <span class="chap_link">Chapter 25</span>
+                            <span class="chap_link">Chapter 26</span>
+                            <a class="chap_link" href="">Chapter 27</a>
+                            <span class="chap_link">Chapter 28</span>
+                            <span class="chap_link">Chapter 29</span>
+                            <span class="chap_link">Chapter 30</span>
+                            <span class="chap_link">Chapter 31</span>
+                            <span class="chap_link">Chapter 32</span>
+                            <span class="chap_link">Chapter 33</span>
+                            <span class="chap_link">Chapter 34</span>
+                            <a class="chap_link" href="">Chapter 35</a>
+                            <a class="chap_link" href="">Chapter 36</a>
+                            <span class="chap_link">Chapter 37</span>
+                            <span class="chap_link">Chapter 38</span>
+                            <span class="chap_link">Chapter 39</span>
+                            <span class="chap_link">Chapter 40</span>
+                            <span class="chap_link">Chapter 41</span>
+                            <span class="chap_link">Chapter 42</span>
+                            <span class="chap_link">Chapter 43</span>
+                            <span class="chap_link">Chapter 44</span>
+                            <span class="chap_link">Chapter 45</span>
+                            <span class="chap_link">Chapter 46</span>
+                            <span class="chap_link">Chapter 47</span>
+                            <a class="chap_link" href="">Chapter 48</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible27" class="toggle" type="checkbox">
+                    <label for="collapsible27" class="lbl-toggle">Daniel (1/12)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <a class="chap_link" href="">Chapter 5</a>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                            <span class="chap_link">Chapter 11</span>
+                            <span class="chap_link">Chapter 12</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible28" class="toggle" type="checkbox">
+                    <label for="collapsible28" class="lbl-toggle">Hosea (1/14)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                            <a class="chap_link" href="">Chapter 11</a>
+                            <span class="chap_link">Chapter 12</span>
+                            <span class="chap_link">Chapter 13</span>
+                            <span class="chap_link">Chapter 14</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible29" class="toggle" type="checkbox">
+                    <label for="collapsible29" class="lbl-toggle">Joel (2/3)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <span class="chap_link">Chapter 3</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible30" class="toggle" type="checkbox">
+                    <label for="collapsible30" class="lbl-toggle">Amos (3/9)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <a class="chap_link" href="">Chapter 4</a>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <a class="chap_link" href="">Chapter 7</a>
+                            <span class="chap_link">Chapter 8</span>
+                            <span class="chap_link">Chapter 9</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible31" class="toggle" type="checkbox">
+                    <label for="collapsible31" class="lbl-toggle">Obadiah (0/1)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible32" class="toggle" type="checkbox">
+                    <label for="collapsible32" class="lbl-toggle">Jonah (1/4)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <span class="chap_link">Chapter 4</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible33" class="toggle" type="checkbox">
+                    <label for="collapsible33" class="lbl-toggle">Micah (0/7)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                            <span class="chap_link">Chapter 7</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible34" class="toggle" type="checkbox">
+                    <label for="collapsible34" class="lbl-toggle">Nahum (0/3)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible35" class="toggle" type="checkbox">
+                    <label for="collapsible35" class="lbl-toggle">Habakkuk (0/3)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible36" class="toggle" type="checkbox">
+                    <label for="collapsible36" class="lbl-toggle">Zephaniah (0/3)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible37" class="toggle" type="checkbox">
+                    <label for="collapsible37" class="lbl-toggle">Haggai (0/3)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible38" class="toggle" type="checkbox">
+                    <label for="collapsible38" class="lbl-toggle">Zechariah (3/14)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <a class="chap_link" href="">Chapter 4</a>
+                            <span class="chap_link">Chapter 5</span>
+                            <a class="chap_link" href="">Chapter 6</a>
+                            <span class="chap_link">Chapter 7</span>
+                            <a class="chap_link" href="">Chapter 8</a>
+                            <span class="chap_link">Chapter 9</span>
+                            <span class="chap_link">Chapter 10</span>
+                            <span class="chap_link">Chapter 11</span>
+                            <span class="chap_link">Chapter 12</span>
+                            <span class="chap_link">Chapter 13</span>
+                            <span class="chap_link">Chapter 14</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible39" class="toggle" type="checkbox">
+                    <label for="collapsible39" class="lbl-toggle">Malachi (0/4)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <span class="chap_link">Chapter 2</span>
+                            <span class="chap_link">Chapter 3</span>
+                            <span class="chap_link">Chapter 4</span>
+                        </div>
+                    </div>
+                </div></li>
+                
             </ul>
-            <h2>New Testament</h2>
-            <ul>
-                <li>Matthew</li>
-                <li>Mark</li>
-                <li>Luke</li>
-                <li>John</li>
-                <li>Acts</li>
-                <li>Romans</li>
-                <li>1 Corinthians</li>
-                <li>2 Corinthians</li>
-                <li>Galatians</li>
-                <li>Ephesians</li>
-                <li>Colossians</li>
-                <li>1 Thessalonians</li>
-                <li>2 Thessalonians</li>
-                <li>1 Timothy</li>
-                <li>Hebrews</li>
-                <li>James</li>
-                <li>1 Peter</li>
-                <li>2 Peter</li>
-                <li>1 John</li>
-                <li>Revelation</li>
+            
+            <h1 style="font-family:monospace">New Testament</h1>
+            
+            <ul style="list-style-type: none">
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible40" class="toggle" type="checkbox">
+                    <label for="collapsible40" class="lbl-toggle">Matthew (1/28/28/28)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href=""><b>Chapter 1</b></a>
+                            <a class="chap_link" href=""><b>Chapter 2</b></a>
+                            <a class="chap_link" href=""><b>Chapter 3</b></a>
+                            <a class="chap_link" href=""><b>Chapter 4</b></a>
+                            <a class="chap_link" href=""><b>Chapter 5</b></a>
+                            <a class="chap_link" href=""><b>Chapter 6</b></a>
+                            <a class="chap_link" href=""><b>Chapter 7</b></a>
+                            <a class="chap_link" href=""><b>Chapter 8</b></a>
+                            <a class="chap_link" href=""><b>Chapter 9</b></a>
+                            <a class="chap_link" href=""><b>Chapter 10</b></a>
+                            <a class="chap_link" href=""><b>Chapter 11</b></a>
+                            <a class="chap_link" href=""><b>Chapter 12</b></a>
+                            <a class="chap_link" href=""><b>Chapter 13</b></a>
+                            <a class="chap_link" href=""><b>Chapter 14</b></a>
+                            <a class="chap_link" href=""><b>Chapter 15</b></a>
+                            <a class="chap_link" href=""><b>Chapter 16</b></a>
+                            <a class="chap_link" href=""><b>Chapter 17</b></a>
+                            <a class="chap_link" href=""><b>Chapter 18</b></a>
+                            <a class="chap_link" href=""><b>Chapter 19</b></a>
+                            <a class="chap_link" href=""><b>Chapter 20</b></a>
+                            <a class="chap_link" href=""><b>Chapter 21</b></a>
+                            <a class="chap_link" href=""><b>Chapter 22</b></a>
+                            <a class="chap_link" href=""><b>Chapter 23</b></a>
+                            <a class="chap_link" href=""><b><i>Chapter 24 (Joseph Smith—Matthew)</i></b></a>
+                            <a class="chap_link" href=""><b>Chapter 25</b></a>
+                            <a class="chap_link" href=""><b>Chapter 26</b></a>
+                            <a class="chap_link" href=""><b>Chapter 27</b></a>
+                            <a class="chap_link" href=""><b>Chapter 28</b></a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible41" class="toggle" type="checkbox">
+                    <label for="collapsible41" class="lbl-toggle">Mark (16/16/16)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href=""><b>Chapter 1</b></a>
+                            <a class="chap_link" href=""><b>Chapter 2</b></a>
+                            <a class="chap_link" href=""><b>Chapter 3</b></a>
+                            <a class="chap_link" href=""><b>Chapter 4</b></a>
+                            <a class="chap_link" href=""><b>Chapter 5</b></a>
+                            <a class="chap_link" href=""><b>Chapter 6</b></a>
+                            <a class="chap_link" href=""><b>Chapter 7</b></a>
+                            <a class="chap_link" href=""><b>Chapter 8</b></a>
+                            <a class="chap_link" href=""><b>Chapter 9</b></a>
+                            <a class="chap_link" href=""><b>Chapter 10</b></a>
+                            <a class="chap_link" href=""><b>Chapter 11</b></a>
+                            <a class="chap_link" href=""><b>Chapter 12</b></a>
+                            <a class="chap_link" href=""><b>Chapter 13</b></a>
+                            <a class="chap_link" href=""><b>Chapter 14</b></a>
+                            <a class="chap_link" href=""><b>Chapter 15</b></a>
+                            <a class="chap_link" href=""><b>Chapter 16</b></a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible42" class="toggle" type="checkbox">
+                    <label for="collapsible42" class="lbl-toggle">Luke (24/24/24)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href=""><b>Chapter 1</b></a>
+                            <a class="chap_link" href=""><b>Chapter 2</b></a>
+                            <a class="chap_link" href=""><b>Chapter 3</b></a>
+                            <a class="chap_link" href=""><b>Chapter 4</b></a>
+                            <a class="chap_link" href=""><b>Chapter 5</b></a>
+                            <a class="chap_link" href=""><b>Chapter 6</b></a>
+                            <a class="chap_link" href=""><b>Chapter 7</b></a>
+                            <a class="chap_link" href=""><b>Chapter 8</b></a>
+                            <a class="chap_link" href=""><b>Chapter 9</b></a>
+                            <a class="chap_link" href=""><b>Chapter 10</b></a>
+                            <a class="chap_link" href=""><b>Chapter 11</b></a>
+                            <a class="chap_link" href=""><b>Chapter 12</b></a>
+                            <a class="chap_link" href=""><b>Chapter 13</b></a>
+                            <a class="chap_link" href=""><b>Chapter 14</b></a>
+                            <a class="chap_link" href=""><b>Chapter 15</b></a>
+                            <a class="chap_link" href=""><b>Chapter 16</b></a>
+                            <a class="chap_link" href=""><b>Chapter 17</b></a>
+                            <a class="chap_link" href=""><b>Chapter 18</b></a>
+                            <a class="chap_link" href=""><b>Chapter 19</b></a>
+                            <a class="chap_link" href=""><b>Chapter 20</b></a>
+                            <a class="chap_link" href=""><b>Chapter 21</b></a>
+                            <a class="chap_link" href=""><b>Chapter 22</b></a>
+                            <a class="chap_link" href=""><b>Chapter 23</b></a>
+                            <a class="chap_link" href=""><b>Chapter 24</b></a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible43" class="toggle" type="checkbox">
+                    <label for="collapsible43" class="lbl-toggle">John (5/17/21)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href=""><b>Chapter 1</b></a>
+                            <a class="chap_link" href=""><b>Chapter 2</b></a>
+                            <a class="chap_link" href=""><b>Chapter 3</b></a>
+                            <a class="chap_link" href=""><b>Chapter 4</b></a>
+                            <a class="chap_link" href=""><b>Chapter 5</b></a>
+                            <a class="chap_link" href="">Chapter 6</a>
+                            <a class="chap_link" href="">Chapter 7</a>
+                            <a class="chap_link" href="">Chapter 8</a>
+                            <a class="chap_link" href="">Chapter 9</a>
+                            <a class="chap_link" href="">Chapter 10</a>
+                            <a class="chap_link" href="">Chapter 11</a>
+                            <a class="chap_link" href="">Chapter 12</a>
+                            <a class="chap_link" href="">Chapter 13</a>
+                            <a class="chap_link" href="">Chapter 14</a>
+                            <span class="chap_link">Chapter 15</span>
+                            <a class="chap_link" href="">Chapter 16</a>
+                            <span class="chap_link">Chapter 17</span>
+                            <span class="chap_link">Chapter 18</span>
+                            <a class="chap_link" href="">Chapter 19</a>
+                            <a class="chap_link" href="">Chapter 20</a>
+                            <span class="chap_link">Chapter 21</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible44" class="toggle" type="checkbox">
+                    <label for="collapsible44" class="lbl-toggle">Acts (19/28)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <a class="chap_link" href="">Chapter 4</a>
+                            <a class="chap_link" href="">Chapter 5</a>
+                            <a class="chap_link" href="">Chapter 6</a>
+                            <a class="chap_link" href="">Chapter 7</a>
+                            <span class="chap_link">Chapter 8</span>
+                            <a class="chap_link" href="">Chapter 9</a>
+                            <span class="chap_link">Chapter 10</span>
+                            <span class="chap_link">Chapter 11</span>
+                            <a class="chap_link" href="">Chapter 12</a>
+                            <a class="chap_link" href="">Chapter 13</a>
+                            <a class="chap_link" href="">Chapter 14</a>
+                            <a class="chap_link" href="">Chapter 15</a>
+                            <a class="chap_link" href="">Chapter 16</a>
+                            <a class="chap_link" href="">Chapter 17</a>
+                            <span class="chap_link">Chapter 18</span>
+                            <span class="chap_link">Chapter 19</span>
+                            <a class="chap_link" href="">Chapter 20</a>
+                            <a class="chap_link" href="">Chapter 21</a>
+                            <a class="chap_link" href="">Chapter 22</a>
+                            <a class="chap_link" href="">Chapter 23</a>
+                            <span class="chap_link">Chapter 24</span>
+                            <a class="chap_link" href="">Chapter 25</a>
+                            <span class="chap_link">Chapter 26</span>
+                            <span class="chap_link">Chapter 27</span>
+                            <span class="chap_link">Chapter 28</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible45" class="toggle" type="checkbox">
+                    <label for="collapsible45" class="lbl-toggle">Romans (16/16)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <a class="chap_link" href="">Chapter 4</a>
+                            <a class="chap_link" href="">Chapter 5</a>
+                            <a class="chap_link" href="">Chapter 6</a>
+                            <a class="chap_link" href="">Chapter 7</a>
+                            <a class="chap_link" href="">Chapter 8</a>
+                            <a class="chap_link" href="">Chapter 9</a>
+                            <a class="chap_link" href="">Chapter 10</a>
+                            <a class="chap_link" href="">Chapter 11</a>
+                            <a class="chap_link" href="">Chapter 12</a>
+                            <a class="chap_link" href="">Chapter 13</a>
+                            <a class="chap_link" href="">Chapter 14</a>
+                            <a class="chap_link" href="">Chapter 15</a>
+                            <a class="chap_link" href="">Chapter 16</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible46" class="toggle" type="checkbox">
+                    <label for="collapsible46" class="lbl-toggle">1 Corinthians (14/16)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <span class="chap_link">Chapter 4</span>
+                            <a class="chap_link" href="">Chapter 5</a>
+                            <a class="chap_link" href="">Chapter 6</a>
+                            <a class="chap_link" href="">Chapter 7</a>
+                            <a class="chap_link" href="">Chapter 8</a>
+                            <a class="chap_link" href="">Chapter 9</a>
+                            <a class="chap_link" href="">Chapter 10</a>
+                            <a class="chap_link" href="">Chapter 11</a>
+                            <a class="chap_link" href="">Chapter 12</a>
+                            <span class="chap_link">Chapter 13</span>
+                            <a class="chap_link" href="">Chapter 14</a>
+                            <a class="chap_link" href="">Chapter 15</a>
+                            <a class="chap_link" href="">Chapter 16</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible47" class="toggle" type="checkbox">
+                    <label for="collapsible47" class="lbl-toggle">2 Corinthians (10/13)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <a class="chap_link" href="">Chapter 4</a>
+                            <a class="chap_link" href="">Chapter 5</a>
+                            <a class="chap_link" href="">Chapter 6</a>
+                            <span class="chap_link">Chapter 7</span>
+                            <a class="chap_link" href="">Chapter 8</a>
+                            <a class="chap_link" href="">Chapter 9</a>
+                            <span class="chap_link">Chapter 10</span>
+                            <a class="chap_link" href="">Chapter 11</a>
+                            <a class="chap_link" href="">Chapter 12</a>
+                            <a class="chap_link" href="">Chapter 13</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible48" class="toggle" type="checkbox">
+                    <label for="collapsible48" class="lbl-toggle">Galatians (4/6)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <a class="chap_link" href="">Chapter 4</a>
+                            <span class="chap_link">Chapter 5</span>
+                            <span class="chap_link">Chapter 6</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible49" class="toggle" type="checkbox">
+                    <label for="collapsible49" class="lbl-toggle">Ephesians (4/6)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <a class="chap_link" href="">Chapter 4</a>
+                            <a class="chap_link" href="">Chapter 5</a>
+                            <span class="chap_link">Chapter 6</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible50" class="toggle" type="checkbox">
+                    <label for="collapsible50" class="lbl-toggle">Philippians (4/4)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <a class="chap_link" href="">Chapter 4</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible51" class="toggle" type="checkbox">
+                    <label for="collapsible51" class="lbl-toggle">Colossians (3/4)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <span class="chap_link">Chapter 3</span>
+                            <a class="chap_link" href="">Chapter 4</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible52" class="toggle" type="checkbox">
+                    <label for="collapsible52" class="lbl-toggle">1 Thessalonians (4/5)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <span class="chap_link">Chapter 3</span>
+                            <a class="chap_link" href="">Chapter 4</a>
+                            <a class="chap_link" href="">Chapter 5</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible53" class="toggle" type="checkbox">
+                    <label for="collapsible53" class="lbl-toggle">2 Thessalonians (2/3)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <span class="chap_link">Chapter 3</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible54" class="toggle" type="checkbox">
+                    <label for="collapsible54" class="lbl-toggle">1 Timothy (6/6)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <a class="chap_link" href="">Chapter 4</a>
+                            <a class="chap_link" href="">Chapter 5</a>
+                            <a class="chap_link" href="">Chapter 6</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible55" class="toggle" type="checkbox">
+                    <label for="collapsible55" class="lbl-toggle">2 Timothy (4/4)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <a class="chap_link" href="">Chapter 4</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible56" class="toggle" type="checkbox">
+                    <label for="collapsible56" class="lbl-toggle">Titus (2/3)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <span class="chap_link">Chapter 3</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible57" class="toggle" type="checkbox">
+                    <label for="collapsible57" class="lbl-toggle">Philemon (1/1)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible58" class="toggle" type="checkbox">
+                    <label for="collapsible58" class="lbl-toggle">Hebrews (13/13)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <a class="chap_link" href="">Chapter 4</a>
+                            <a class="chap_link" href="">Chapter 5</a>
+                            <a class="chap_link" href="">Chapter 6</a>
+                            <a class="chap_link" href="">Chapter 7</a>
+                            <a class="chap_link" href="">Chapter 8</a>
+                            <a class="chap_link" href="">Chapter 9</a>
+                            <a class="chap_link" href="">Chapter 10</a>
+                            <a class="chap_link" href="">Chapter 11</a>
+                            <a class="chap_link" href="">Chapter 12</a>
+                            <a class="chap_link" href="">Chapter 13</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible59" class="toggle" type="checkbox">
+                    <label for="collapsible59" class="lbl-toggle">James (3/5)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <span class="chap_link">Chapter 4</span>
+                            <span class="chap_link">Chapter 5</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible60" class="toggle" type="checkbox">
+                    <label for="collapsible60" class="lbl-toggle">1 Peter (5/5)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <a class="chap_link" href="">Chapter 4</a>
+                            <a class="chap_link" href="">Chapter 5</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible61" class="toggle" type="checkbox">
+                    <label for="collapsible61" class="lbl-toggle">2 Peter (3/3)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <a class="chap_link" href="">Chapter 3</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible62" class="toggle" type="checkbox">
+                    <label for="collapsible62" class="lbl-toggle">1 John (5/5)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <a class="chap_link" href="">Chapter 4</a>
+                            <a class="chap_link" href="">Chapter 5</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible63" class="toggle" type="checkbox">
+                    <label for="collapsible63" class="lbl-toggle">2 John (0/1)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible64" class="toggle" type="checkbox">
+                    <label for="collapsible64" class="lbl-toggle">3 John (0/1)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <span class="chap_link">Chapter 1</span>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible65" class="toggle" type="checkbox">
+                    <label for="collapsible65" class="lbl-toggle">Jude (1/1)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                        </div>
+                    </div>
+                </div></li>
+                
+                <li><div class="wrap-collabsible">
+                    <input id="collapsible66" class="toggle" type="checkbox">
+                    <label for="collapsible66" class="lbl-toggle">Revelation (17/22)</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <a class="chap_link" href="">Chapter 1</a>
+                            <a class="chap_link" href="">Chapter 2</a>
+                            <a class="chap_link" href="">Chapter 3</a>
+                            <a class="chap_link" href="">Chapter 4</a>
+                            <a class="chap_link" href="">Chapter 5</a>
+                            <a class="chap_link" href="">Chapter 6</a>
+                            <a class="chap_link" href="">Chapter 7</a>
+                            <a class="chap_link" href="">Chapter 8</a>
+                            <a class="chap_link" href="">Chapter 9</a>
+                            <a class="chap_link" href="">Chapter 10</a>
+                            <a class="chap_link" href="">Chapter 11</a>
+                            <a class="chap_link" href="">Chapter 12</a>
+                            <a class="chap_link" href="">Chapter 13</a>
+                            <span class="chap_link">Chapter 14</span>
+                            <span class="chap_link">Chapter 15</span>
+                            <a class="chap_link" href="">Chapter 16</a>
+                            <span class="chap_link">Chapter 17</span>
+                            <span class="chap_link">Chapter 18</span>
+                            <a class="chap_link" href="">Chapter 19</a>
+                            <a class="chap_link" href="">Chapter 20</a>
+                            <span class="chap_link">Chapter 21</span>
+                            <a class="chap_link" href="">Chapter 22</a>
+                        </div>
+                    </div>
+                </div></li>
+                
             </ul>
+            
+            <br><br><br><br><br>
         </div>
     </body>
 </html>
