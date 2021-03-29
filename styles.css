@@ -86,3 +86,13 @@ input[type='checkbox'] { display: none; }
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
+
+.main_page_link {
+    padding: 0.5rem;
+    background: #DDDDDD;
+    font-size: 20px;
+    text-decoration:none;
+    white-space: nowrap;
+    display: inline-block;
+    margin: 10px;
+}
