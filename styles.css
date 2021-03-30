@@ -4,6 +4,8 @@ div.header {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+
+    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }
 
 .chap_link {
@@ -17,9 +19,11 @@ div.intro {
     text-align: justify;
     margin-right: auto;
     margin-left: auto;
+    
+    font-family: "Lucida Bright", Georgia, serif;
 }
 
-input[type='checkbox'] { display: none; }
+input.toggle[type='checkbox'] { display: none; }
             
 .lbl-toggle {
     display: block;
