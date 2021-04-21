@@ -1,3 +1,39 @@
+/* these first two are recommended because it changes the complete box-sizing default through the whole page */
+
+:root {
+    box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
+header {
+    margin: 1em;
+    background-color: #eee;
+    text-align: center;
+    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav li {
+    display: inline-block;
+    padding: 0.75em;
+}
+
+.nav a {
+    padding: 0.5em;
+    background-color: #ccc;
+    text-decoration: none;
+}
+
+
+
+/*
+
 div.header {
     align: center;
     width: 90%;
@@ -100,3 +136,5 @@ input.toggle[type='checkbox'] { display: none; }
     display: inline-block;
     margin: 10px;
 }
+
+*/
